@@ -10,21 +10,22 @@
 
   gtag('config', 'G-DQ5VPQ749H');
 
-const topButton = document.querySelector('.topButton');
+  // body要素のスクロール量を取得、0が返ってくる
+const windowTop = document.body.scrollTop;
 
-topButton.addEventListener('click', () => {
+// #page-topを取得し、変数に代入
+const pageTop = document.getElementById('page-top');
+
+// pageTopをクリックした時の動作
+pageTop.addEventListener('click', function(e) {
+  // a要素のデフォルトの挙動をOFFにする
+  e.preventDefault();
+  
+  //　topで指定した位置に、behaviorで指定した動きでスクロールする
   window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+    top: windowTop, // 0
+    behavior: 'smooth' // スムーズに
   });
-});
-
-window.addEventListener('scroll', () => {
-  if(window.scrollY > 300) {
-    topButton.style.display = 'block';
-  } else {
-    topButton.style.display = 'none';
-  }
 });
 
 </script>
@@ -55,32 +56,36 @@ body {
   .moku{font-size:28
 vw}
 
-    .topButton {
-  display: none;   /*非表示*/
-  position: fixed; /*位置を固定*/
-  bottom: 30px;
-  right: 30px;
-  width: 80px;
-  height: 80px;
-  background-color: #0d7df5;
-  font-size: 20px;
-  color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 3px solid lightgray;
+    #page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: #333;
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -5px) rotate(45deg);
+    content: "";
+    width: 22px;
+    height: 22px;
+    border-top: 2px solid #fff;
+    border-left: 2px solid #fff;
+  }
+  span {
+    display: none;
+  }
 }
 
-  .topButton:hover {
-  font-weight: bold;
-  background-color: #f99f3e;
-  border: 5px solid lightgray;
-}
   </style>
 
   <meta charset="UTF-8">
 </head>
-<body>
- <button class="topButton">TOP</button>
+<body>  
+<a id="page-top" href="#"><span>ページのトップに戻る</span></a>
   
  <h1 id=syokai>自己紹介</h1>
   <p><img src="ikon-image.png" width=100 height=100 alt="アイコン"><br>いちねこのYoutubeの公式（？）サイトです！よろしくお願いします<br>
