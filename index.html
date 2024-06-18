@@ -9,6 +9,14 @@
   gtag('js', new Date());
 
   gtag('config', 'G-DQ5VPQ749H');
+
+
+  const topButton = document.querySelector('.topButton');
+    topButton.addEventListener('click', () => {
+window.scrollTo({   
+  top: 0,
+  behavior: 'smooth'
+});
 </script>
   <title>いちねこの公式サイト</title>
 <link rel="icon" type="image/png" href="ikon-image.png">
@@ -50,6 +58,12 @@ vw}
   border-radius: 50%;
   cursor: pointer;
   border: 3px solid lightgray;
+}
+
+  .topButton:hover {
+  font-weight: bold;
+  background-color: #f99f3e;
+  border: 5px solid lightgray;
 }
   </style>
 
