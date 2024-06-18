@@ -10,13 +10,23 @@
 
   gtag('config', 'G-DQ5VPQ749H');
 
+const topButton = document.querySelector('.topButton');
 
 topButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
-    });
+  });
 });
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300) {
+    topButton.style.display = 'block';
+  } else {
+    topButton.style.display = 'none';
+  }
+});
+
 </script>
   <title>いちねこの公式サイト</title>
 <link rel="icon" type="image/png" href="ikon-image.png">
