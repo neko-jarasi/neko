@@ -10,24 +10,6 @@
 
   gtag('config', 'G-DQ5VPQ749H');
 
-  // body要素のスクロール量を取得、0が返ってくる
-const windowTop = document.body.scrollTop;
-
-// #page-topを取得し、変数に代入
-const pageTop = document.getElementById('page-top');
-
-// pageTopをクリックした時の動作
-pageTop.addEventListener('click', function(e) {
-  // a要素のデフォルトの挙動をOFFにする
-  e.preventDefault();
-  
-  //　topで指定した位置に、behaviorで指定した動きでスクロールする
-  window.scrollTo({
-    top: windowTop, // 0
-    behavior: 'smooth' // スムーズに
-  });
-});
-
 </script>
   <title>いちねこの公式サイト</title>
 <link rel="icon" type="image/png" href="ikon-image.png">
@@ -80,22 +62,13 @@ vw}
   }
 }
 
-.fixed_btn { 
-position: fixed;
-bottom: 10px;
-right: 10px;
-padding: 6px 40px;
-}
+
 
   </style>
 
   <meta charset="UTF-8">
 </head>
 <body>  
-<button href="https://youtube.com/@neko_jarasi" class="fixed_btn">youtube</button>
-
-
-<a id="page-top" href="#"><span>ページのトップに戻る</span></a>
   
  <h1 id=syokai>自己紹介</h1>
   <p><img src="ikon-image.png" width=100 height=100 alt="アイコン"><br>いちねこのYoutubeの公式（？）サイトです！よろしくお願いします<br>
